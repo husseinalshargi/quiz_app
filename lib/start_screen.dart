@@ -4,21 +4,12 @@ import 'package:quiz_app/style_text.dart';
 class StartScreen extends StatelessWidget {
   const StartScreen({
     super.key,
-    required this.colors,
   }); //pass the key to the extendet class, should have const
-  final List<Color> colors;
+
 
   @override
   Widget build(context) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: colors,
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-      ),
-      child: Center(
+    return Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -42,7 +33,6 @@ class StartScreen extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
+      );
   }
 }
