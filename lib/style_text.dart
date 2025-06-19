@@ -6,6 +6,6 @@ class StyledText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(text, style: TextStyle(color: Colors.white, fontSize: 28.0));
+    return Text(text, style: TextStyle(color: Colors.white, fontSize: 24.0));
   }
 }
