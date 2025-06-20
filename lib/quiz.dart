@@ -12,8 +12,15 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  Widget activeScreen = const StartScreen();
+  Widget? activeScreen;
   //Widget rather than var to use it by more than one widget
+
+  @override
+  void initState() {
+    //provided by state class, execute only one time before the rendring (before build)
+    super.initState();
+    activeScreen = StartScreen(switchScreen);
+  }
 
   void switchScreen() {
     setState(() {
