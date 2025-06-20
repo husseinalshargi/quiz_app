@@ -12,19 +12,24 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  Widget? activeScreen;
-  //Widget rather than var to use it by more than one widget
+  //in order to make it using init
+  //Widget? activeScreen;
+  // Widget rather than var to use it by more than one widget
 
-  @override
-  void initState() {
-    //provided by state class, execute only one time before the rendring (before build)
-    super.initState();
-    activeScreen = StartScreen(switchScreen);
-  }
+  // @override
+  // void initState() {
+  //  //provided by state class, execute only one time before the rendring (before build)
+  //  super.initState();
+  //  activeScreen = StartScreen(switchScreen);
+  // }
+
+  // to do it by a string
+  var activeScreen = 'start-screen';
 
   void switchScreen() {
     setState(() {
-      activeScreen = const QuestionScreen();
+      //activeScreen = const QuestionScreen();
+      activeScreen = 'question-screen';
     });
   }
 
@@ -43,7 +48,10 @@ class _QuizState extends State<Quiz> {
               end: Alignment.bottomRight,
             ),
           ),
-          child: activeScreen,
+          //child: activeScreen,
+          child: activeScreen == 'start-screen'
+              ? StartScreen(switchScreen)
+              : const QuestionScreen(),
         ),
       ),
     );
