@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/style_text.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 
 class StartScreen extends StatelessWidget {
   const StartScreen(
@@ -7,7 +8,8 @@ class StartScreen extends StatelessWidget {
     super.key,
   }); //pass the key to the extendet class, should have const
 
-  final void Function() startQuiz; //must be in this form when taking a function from the constructor, void -> type
+  final void Function()
+  startQuiz; //must be in this form when taking a function from the constructor, void -> type
   //must run it inside lambda of a button press
 
   @override
@@ -27,7 +29,14 @@ class StartScreen extends StatelessWidget {
             ), //to make it transparent by altering image's color
           ),
           const SizedBox(height: 60),
-          const StyledText('Learn Flutter the Fun Way!'),
+          Text(
+            'Learn Flutter the Fun Way',
+            style: GoogleFonts.lato(
+              color: const Color.fromARGB(255, 220, 180, 231),
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           const SizedBox(height: 35),
           OutlinedButton.icon(
             //if icon then child will turn to label
